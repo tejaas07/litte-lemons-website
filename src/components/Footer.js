@@ -1,69 +1,48 @@
-import { Link } from "react-router-dom";
-export default function Footer() {
-  return (
-    <footer>
-      <menu>
-        <li className="img-footer">
-          <img
-            src={require("../assets/footer-logo.png")}
-            alt="Little Lemon logo"
-          ></img>
-        </li>
-        <li className="contact">
-          <h1 className="footer-header">Navigation</h1>
-          <ul className="footer-links">
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <a
-              href={require("../assets/menu.webp")}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Menu
-            </a>
-            <Link to="/reservations">Reservations</Link>
-            <Link to="/order">Order</Link>
-            <Link to="/login">Login</Link>
-          </ul>
-        </li>
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { restFood1 } from '../Assets';
+import '../Styles/FooterStyle.css';
 
-        <li>
-          <h1 className="footer-header">Contact</h1>
-          <ul className="footer-links">
-            <li>2395 Maldove Way,</li>
-            <li>Chicago Illinois</li>
-            <br></br>
-            <li>(629)-243-6827</li>
-            <br></br>
-            <a
-              href="mailto: info@littlelemon.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              info@littlelemon.com
-            </a>
-          </ul>
-        </li>
-        <li>
-          <h1 className="footer-header">Connect</h1>
-          <ul className="footer-links">
-            <a
-              href="https://www.facebook.com/thelittlelemonshop/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Facebook
-            </a>
-            <a
-              href="https://www.instagram.com/littlelemonmoon/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Instagram
-            </a>
-          </ul>
-        </li>
-      </menu>
-    </footer>
-  );
+const Footer = () => {
+    return (
+        <footer className="footer">
+            <div className="footer-container">
+                <div className="footer-row">
+                    {/* Column 2: Doormat Navigation */}
+                    <div className="footer-column">
+                        <h2>Navigation</h2>
+                        <ul>
+                            <li><Link to='/'>Home</Link></li>
+                            <li><Link to='/About'>About</Link></li>
+                            <li><Link to='/Reservations'>Reservations</Link></li>
+                            <li><Link to='/OrderOnline'>Order Online</Link></li>
+                            <li><Link to='/Login'>Login</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Column 3: Contact Information */}
+                    <div className="footer-column">
+                        <h2>Contact</h2>
+                        <ul>
+                            <li>Email: contact@little-lemon.com</li>
+                            <li>Phone: (312) 555-1234</li>
+                            <li>Address: 123 Lemon St, Chicago, IL 60601</li>
+                        </ul>
+                    </div>
+
+                    {/* Column 4: Social Media */}
+                    <div className="footer-column">
+                        <h2>Social Media</h2>
+                        <ul>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
 }
+
+export default Footer;
